@@ -1,0 +1,671 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "properties": {
+    "世界": {
+      "type": "object",
+      "properties": {
+        "当前时间": {
+          "type": "string"
+        },
+        "当前时空": {
+          "type": "string"
+        },
+        "年号": {
+          "type": "string"
+        },
+        "国祚": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 100
+        },
+        "民心": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 100
+        },
+        "国库": {
+          "type": "number",
+          "minimum": 0
+        },
+        "军事": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 100
+        },
+        "腐败": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 100
+        }
+      },
+      "required": [
+        "当前时间",
+        "当前时空",
+        "年号",
+        "国祚",
+        "民心",
+        "国库",
+        "军事",
+        "腐败"
+      ]
+    },
+    "主角": {
+      "type": "object",
+      "properties": {
+        "名称": {
+          "type": "string"
+        },
+        "身份": {
+          "type": "string"
+        },
+        "性别": {
+          "type": "string"
+        },
+        "年龄": {
+          "type": "number"
+        },
+        "称号": {
+          "type": "string"
+        },
+        "等级": {
+          "type": "string"
+        },
+        "体力": {
+          "type": "object",
+          "properties": {
+            "当前": {
+              "type": "number"
+            },
+            "最大": {
+              "type": "number"
+            }
+          },
+          "required": [
+            "当前",
+            "最大"
+          ]
+        },
+        "饱食度": {
+          "type": "object",
+          "properties": {
+            "当前": {
+              "type": "number"
+            },
+            "最大": {
+              "type": "number"
+            }
+          },
+          "required": [
+            "当前",
+            "最大"
+          ]
+        },
+        "能量": {
+          "type": "object",
+          "properties": {
+            "当前": {
+              "type": "number"
+            },
+            "最大": {
+              "type": "number"
+            }
+          },
+          "required": [
+            "当前",
+            "最大"
+          ]
+        },
+        "属性": {
+          "type": "object",
+          "properties": {
+            "生命": {
+              "type": "number"
+            },
+            "最大生命": {
+              "type": "number"
+            },
+            "寿元": {
+              "type": "number"
+            },
+            "力量": {
+              "type": "number"
+            },
+            "智力": {
+              "type": "number"
+            },
+            "魅力": {
+              "type": "number"
+            },
+            "运气": {
+              "type": "number"
+            },
+            "敏捷": {
+              "type": "number"
+            },
+            "耐力": {
+              "type": "number"
+            },
+            "帝王威仪": {
+              "type": "number"
+            },
+            "因果值": {
+              "type": "number"
+            },
+            "善恶度": {
+              "type": "number",
+              "minimum": -100,
+              "maximum": 100
+            },
+            "明昏度": {
+              "type": "number",
+              "minimum": -100,
+              "maximum": 100
+            },
+            "经验值": {
+              "type": "number"
+            }
+          },
+          "required": [
+            "生命",
+            "最大生命",
+            "寿元",
+            "力量",
+            "智力",
+            "魅力",
+            "运气",
+            "敏捷",
+            "耐力",
+            "帝王威仪",
+            "因果值",
+            "善恶度",
+            "明昏度",
+            "经验值"
+          ]
+        },
+        "天赋": {
+          "type": "string"
+        },
+        "系统模板": {
+          "type": "string"
+        },
+        "初始物品": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "金币": {
+          "type": "number"
+        },
+        "系统点数": {
+          "type": "number"
+        }
+      },
+      "required": [
+        "名称",
+        "身份",
+        "性别",
+        "年龄",
+        "称号",
+        "等级",
+        "体力",
+        "饱食度",
+        "能量",
+        "属性",
+        "天赋",
+        "系统模板",
+        "初始物品",
+        "金币",
+        "系统点数"
+      ]
+    },
+    "背包": {
+      "type": "object",
+      "propertyNames": {
+        "type": "string",
+        "description": "物品名"
+      },
+      "additionalProperties": {
+        "type": "object",
+        "properties": {
+          "数量": {
+            "type": "number"
+          },
+          "稀有度": {
+            "type": "string",
+            "enum": [
+              "普通",
+              "稀有",
+              "史诗",
+              "传说",
+              "神话"
+            ]
+          },
+          "描述": {
+            "type": "string"
+          },
+          "已装备": {
+            "default": false,
+            "type": "boolean"
+          },
+          "可使用": {
+            "default": false,
+            "type": "boolean"
+          },
+          "效果": {
+            "type": "string"
+          },
+          "金币价值": {
+            "type": "number"
+          }
+        },
+        "required": [
+          "数量",
+          "稀有度",
+          "描述",
+          "金币价值"
+        ]
+      }
+    },
+    "朝臣": {
+      "type": "object",
+      "propertyNames": {
+        "type": "string",
+        "description": "角色ID"
+      },
+      "additionalProperties": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "姓名": {
+            "type": "string"
+          },
+          "身份": {
+            "type": "string"
+          },
+          "头像": {
+            "type": "string"
+          },
+          "年龄": {
+            "type": "number"
+          },
+          "生命": {
+            "type": "number"
+          },
+          "最大生命": {
+            "type": "number"
+          },
+          "攻击": {
+            "type": "number"
+          },
+          "防御": {
+            "type": "number"
+          },
+          "忠诚度": {
+            "type": "number",
+            "minimum": 0,
+            "maximum": 100
+          },
+          "好感": {
+            "type": "number",
+            "minimum": 0,
+            "maximum": 100
+          },
+          "派系": {
+            "type": "string"
+          },
+          "状态": {
+            "type": "string",
+            "enum": [
+              "活跃",
+              "已流放",
+              "已处决",
+              "隐退",
+              "战死"
+            ]
+          },
+          "主要事迹": {
+            "type": "string"
+          },
+          "内心想法": {
+            "type": "string"
+          },
+          "玩家记忆": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "id",
+          "姓名",
+          "身份",
+          "忠诚度",
+          "好感",
+          "派系",
+          "状态",
+          "主要事迹"
+        ]
+      }
+    },
+    "省份": {
+      "type": "object",
+      "propertyNames": {
+        "type": "string",
+        "description": "省份ID"
+      },
+      "additionalProperties": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "名称": {
+            "type": "string"
+          },
+          "人口": {
+            "type": "number"
+          },
+          "控制": {
+            "type": "string",
+            "enum": [
+              "保皇党",
+              "起义军",
+              "外族/外敌",
+              "中立/自治"
+            ]
+          },
+          "控制度": {
+            "type": "number",
+            "minimum": 0,
+            "maximum": 100
+          },
+          "税率": {
+            "type": "number",
+            "minimum": 0,
+            "maximum": 100
+          },
+          "防御等级": {
+            "type": "number",
+            "minimum": 0,
+            "maximum": 100
+          },
+          "民怨": {
+            "type": "number",
+            "minimum": 0,
+            "maximum": 100
+          }
+        },
+        "required": [
+          "id",
+          "名称",
+          "人口",
+          "控制",
+          "控制度",
+          "税率",
+          "防御等级",
+          "民怨"
+        ]
+      }
+    },
+    "任务": {
+      "type": "object",
+      "propertyNames": {
+        "type": "string",
+        "description": "任务ID"
+      },
+      "additionalProperties": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "标题": {
+            "type": "string"
+          },
+          "描述": {
+            "type": "string"
+          },
+          "类型": {
+            "type": "string",
+            "enum": [
+              "主线羁绊",
+              "模拟经营",
+              "沙盒生存",
+              "系统特派"
+            ]
+          },
+          "目标": {
+            "type": "string"
+          },
+          "进度": {
+            "type": "number"
+          },
+          "目标值": {
+            "type": "number"
+          },
+          "奖励描述": {
+            "type": "string"
+          },
+          "已完成": {
+            "default": false,
+            "type": "boolean"
+          },
+          "已领取": {
+            "default": false,
+            "type": "boolean"
+          },
+          "惩罚描述": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "id",
+          "标题",
+          "描述",
+          "类型",
+          "目标",
+          "进度",
+          "目标值",
+          "奖励描述"
+        ]
+      }
+    },
+    "编年史": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "年份": {
+            "type": "string"
+          },
+          "章节": {
+            "type": "string"
+          },
+          "事件文本": {
+            "type": "string"
+          },
+          "玩家决策": {
+            "type": "string"
+          },
+          "影响描述": {
+            "type": "string"
+          },
+          "时间戳": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "id",
+          "年份",
+          "章节",
+          "事件文本",
+          "玩家决策",
+          "影响描述",
+          "时间戳"
+        ]
+      }
+    },
+    "世界事件": {
+      "type": "object",
+      "propertyNames": {
+        "type": "string",
+        "description": "事件ID"
+      },
+      "additionalProperties": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "标题": {
+            "type": "string"
+          },
+          "严重程度": {
+            "type": "string",
+            "enum": [
+              "常态",
+              "严峻",
+              "毁灭性",
+              "祥瑞"
+            ]
+          },
+          "地点": {
+            "type": "string"
+          },
+          "描述": {
+            "type": "string"
+          },
+          "持续回合": {
+            "type": "number"
+          }
+        },
+        "required": [
+          "id",
+          "标题",
+          "严重程度",
+          "地点",
+          "描述",
+          "持续回合"
+        ]
+      }
+    },
+    "系统": {
+      "type": "object",
+      "properties": {
+        "已选择": {
+          "default": false,
+          "type": "boolean"
+        },
+        "卡池": {
+          "default": [],
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "id": {
+                "type": "string"
+              },
+              "名称": {
+                "type": "string"
+              },
+              "稀有度": {
+                "type": "string",
+                "enum": [
+                  "普通",
+                  "稀有",
+                  "史诗",
+                  "传说",
+                  "神话"
+                ]
+              },
+              "类型": {
+                "type": "string",
+                "enum": [
+                  "英灵",
+                  "宝物",
+                  "神术",
+                  "气运"
+                ]
+              },
+              "描述": {
+                "type": "string"
+              },
+              "效果": {
+                "type": "string"
+              },
+              "已领取": {
+                "default": false,
+                "type": "boolean"
+              }
+            },
+            "required": [
+              "id",
+              "名称",
+              "稀有度",
+              "类型",
+              "描述",
+              "效果"
+            ]
+          }
+        },
+        "签到天数": {
+          "default": 0,
+          "type": "number"
+        },
+        "最后签到日期": {
+          "type": "string"
+        },
+        "历史记录": {
+          "default": [],
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "游戏进度": {
+      "type": "object",
+      "properties": {
+        "已开始": {
+          "default": false,
+          "type": "boolean"
+        },
+        "纪年": {
+          "type": "string"
+        },
+        "天数": {
+          "default": 0,
+          "type": "number"
+        },
+        "剧情日志": {
+          "default": [],
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      },
+      "required": [
+        "纪年"
+      ]
+    }
+  },
+  "required": [
+    "世界",
+    "主角",
+    "背包",
+    "朝臣",
+    "省份",
+    "任务",
+    "编年史",
+    "世界事件",
+    "系统",
+    "游戏进度"
+  ]
+}

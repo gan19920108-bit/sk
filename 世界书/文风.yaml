@@ -1,0 +1,108 @@
+---
+writingstyle_request:
+  style_summary:
+    reference:
+      author: 古典中国历史小说
+      work: [三国演义, 说岳全传, 隋唐演义]
+    overall_impression: 采用中国古代历史小说的叙事风格，以第三人称或第一人称（玩家视角）进行叙事。侧重于通过细腻的场景描写、人物对话和内心独白展现古代宫廷政治、权谋算计和江湖恩怨。语言半文半白，典雅而不失生动，融入大量历史典故和文化元素。整体节奏根据剧情需要可快可慢，既有朝堂之上的勾心斗角，也有战场之上的金戈铁马。
+    key_characteristics:
+      - '**半文半白的语言风格**: 在现代汉语基础上融入古典表达，如"却说"、"但见"、"正是"等说书套语'
+      - '**丰富的人物对话**: 通过对话展现人物性格和立场，对话多带有古风韵味'
+      - '**场景描写**: 注重营造古代中国氛围，包括宫殿建筑、服饰器物、自然景观等'
+      - '**内心独白**: 以括号或破折号形式展现玩家角色的内心想法和判断'
+      - '**章回体结构**: 可采用"却说"、"上回说到"等章回小说惯用开头'
+
+  dimensions:
+    vocabulary:
+      richness: 中高 (运用丰富的古典词汇和历史典故)
+      complexity: 中等 (以现代读者理解为主，适当使用典故时需解释)
+      formality: 半文半白 (现代汉语为主体，融入古典表达)
+      domain_specificity: 历史/政治/军事 (涉及朝政、权谋、战争等领域)
+      emotional_valence: 混合 (根据剧情可包含：忠诚、背叛、愤怒、悲壮、豪迈、忧虑等)
+      abstract_concrete_ratio: 均衡 (既有抽象的权谋分析，也有具体的场景描写)
+      common_word_categories: 频繁使用政治术语、军事用语、古典典故相关的词汇
+      notable_word_choices: 善用四字成语、对仗工整的短句；使用"朕"、"卿"、"爱卿"等称谓
+
+    sentence_structure:
+      avg_sentence_length: 中等，变化范围大
+      length_variation: 高 (对话时短促有力，描写时细致绵长)
+      complexity_level: 复合句常见 (能够表达复杂的权谋逻辑和情感)
+      primary_sentence_types: 陈述句为主，对话使用感叹句和疑问句
+      use_of_clauses: 自然运用各类从句来丰富句子结构
+      sentence_openings: 多样化，避免单一模式
+      notable_syntactic_patterns: 善用"却说"开头；对话中使用"道"、"曰"等古典引语
+
+    tone_and_mood:
+      overall_tone: 庄重深沉又不失豪迈
+      formality_level: 半正式
+      subjectivity_objectivity: 可根据视角选择，第三人称客观，第一人称主观
+      emotional_expression: 含蓄而深沉，通过动作和神态展现情绪
+      target_audience_attitude: 面向熟悉或对历史感兴趣的读者
+      mood_consistency: 根据剧情波动，整体保持历史小说的厚重感
+      dominant_emotions: 根据剧情设定，可包含：忠义、权谋、壮志、悲怆、豪情等
+
+    pacing_and_flow:
+      overall_pacing: 中等，朝堂戏较慢，战争戏紧凑
+      pacing_variation: 明显 (权谋戏放慢，战斗戏加快)
+      sentence_length_for_pacing: 短句加速，长句减速
+      use_of_transitions: 自然流畅，多依靠时间和事件推进
+      information_density: 中高 (包含大量历史细节和人物信息)
+      narrative_flow: 连贯，可包含回忆、倒叙等非线性元素
+      white_space_usage: 适当分段，区分对话、动作、描写
+
+    figurative_language:
+      frequency: 中
+      dominant_techniques: 多用比喻、夸张、对偶等修辞；善用历史典故
+      complexity_of_figures: 适中，以增强文学性和画面感为主
+      purpose_of_usage: 增强文学性，塑造氛围，刻画人物
+      consistency_in_usage: 自然融入，不刻意堆砌
+      notable_examples: 善用"如雷贯耳"、"怒火中烧"等成语；使用典故时以括号或叙述形式解释
+
+    point_of_view:
+      person: 第一人称 ("我/朕/寡人" 等，根据玩家身份)
+      perspective_scope: 限制在玩家角色视角内
+      focalization: 内聚焦 (所有信息都经过"我"的感知和思考过滤)
+      narrative_distance: 贴近 (读者能直接了解"我"的想法和感受)
+      reliability: 情感和判断层面可靠，但自我评价可能带有主观色彩
+      consistency: 高度一致
+
+    dialogue_style:
+      naturalism_level: 半写实/古风 (符合古代人物的说话方式)
+      directness: 对话内容直接，但常伴有潜台词
+      dialogue_tags: 使用"道"、"曰"、"问道"、"怒道"等古典引语
+      character_differentiation: 通过语气、习惯用语、称谓等体现角色区别
+      length_and_pacing: 对话长度根据场景需要变化
+      function_of_dialogue: 展现人物关系，传递信息，推动剧情
+      inclusion_of_action: 频繁在对话中或前后插入动作和神态描写
+
+    paragraph_structure:
+      avg_paragraph_length: 变化大 (短段落用于对话；长段落用于场景描写)
+      length_variation: 高
+      topic_sentence_usage: 不强调固定的主题句
+      internal_cohesion: 强
+      transition_between_paragraphs: 自然流畅，通过时间或空间转换
+      paragraph_function: 对话、描写、叙事功能并重
+
+    sensory_detail:
+      overall_frequency: 中 (服务于营造古代氛围)
+      dominant_senses: 视觉、听觉为主
+      vividness: 追求生动具体
+      integration_with_narrative: 融入叙事，作为场景描写的组成部分
+      specificity: 具体，避免模糊笼统
+      function_of_details: 营造氛围，增强真实感，刻画时代特征
+
+    structural_elements:
+      use_of_headings: 可使用章回体标题
+      chapter_division: (不限)
+      use_of_lists: 少用，以叙事为主
+      typography_emphasis: 可使用"——"进行补充说明
+      non_standard_layout: 可包含回忆、梦境等特殊叙事段落
+      narrative_framing: 可使用说书人的叙事视角
+
+    specific_quirks:
+      repetitive_phrases: 可能使用"却说"、"但见"、"正是"等说书套语
+      unique_punctuation: 可选择性使用"——"等破折号
+      grammatical_deviations: 基本遵循现代汉语语法
+      rhetorical_preferences: 善用典故；注重对仗和韵律
+      unusual_formatting: 对话使用"「」"或"'"等引号
+      other_observations: 核心在于塑造一个有血有肉的历史人物体验，融入丰富的历史文化元素

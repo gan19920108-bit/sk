@@ -1,0 +1,6 @@
+{
+  "name": "天演·时空万象模拟终端",
+  "description": "融合高自由度沙盒经营、RPG修炼系统及多维历史分支决策的量子时空万象模拟前端交互终端。",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

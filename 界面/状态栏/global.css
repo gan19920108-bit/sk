@@ -1,0 +1,74 @@
+/* 酒馆环境下的全局样式 */
+:root {
+  --color-primary: #f59e0b;
+  --color-primary-dark: #d97706;
+  --color-background: #1e293b;
+  --color-surface: #334155;
+  --color-border: #475569;
+  --color-text: #f8fafc;
+  --color-text-muted: #94a3b8;
+  --color-success: #22c55e;
+  --color-warning: #eab308;
+  --color-danger: #ef4444;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Microsoft YaHei', 'PingFang SC', 'Hiragino Sans GB', sans-serif;
+  background: linear-gradient(to bottom, #0f172a, #1e293b);
+  color: var(--color-text);
+  min-height: 100vh;
+}
+
+/* TailwindCSS 基础样式重置 */
+#app {
+  min-height: 100vh;
+}
+
+/* 滚动条样式 */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: rgba(0, 0, 0, 0.2);
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(245, 158, 11, 0.5);
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(245, 158, 11, 0.7);
+}
+
+/* 动画 */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.3s ease-out;
+}
+
+/* 玻璃态效果 */
+.glass {
+  background: rgba(51, 65, 85, 0.8);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(71, 85, 105, 0.5);
+}
