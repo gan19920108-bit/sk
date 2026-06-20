@@ -1,0 +1,1 @@
+{"version":3,"file":"index.js","mappings":"AAEAA,EAAA,KACAC,QAAAC,KAAA","sources":["webpack://tavern_helper_template/src/sk/脚本/立即事件/index.ts?a4b0"],"sourcesContent":["// 立即事件脚本 - 用于处理特殊的剧情触发器\n// 此角色卡暂不包含立即事件，保持文件存在以便后续扩展\n$(() => {\n    console.info('[天演] 立即事件脚本已加载');\n});\nexport {};\n"],"names":["$","console","info"],"sourceRoot":""}
