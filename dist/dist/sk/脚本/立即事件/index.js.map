@@ -1,1 +1,0 @@
-{"version":3,"file":"index.js","mappings":"AAAAA,EAAA,KAAOC,QAAAC,KAAA","sources":["webpack://tavern_helper_template/src/sk/dist/sk/脚本/立即事件/index.js?536f"],"sourcesContent":["$(()=>{console.info('[天演] 立即事件脚本已加载')});\n//# sourceMappingURL=index.js.map"],"names":["$","console","info"],"sourceRoot":""}
