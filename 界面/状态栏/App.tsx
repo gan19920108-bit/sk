@@ -1,6 +1,7 @@
-import { useState } from 'react';
+import { useState, useEffect, useCallback } from 'react';
 import { useDataStore } from './store';
 import type { StatData, InventoryItem } from './store';
+import { loadFromLatestMessage, type Option } from './utils/messageParser';
 
 // 枚举类型定义
 const TimelineType = {
@@ -38,7 +39,41 @@ const TalentSpec = {
 // 主应用组件 - 适配酒馆 iframe 环境
 export default function App() {
   const { statData } = useDataStore();
-  const [activeTab, setActiveTab] = useState<'overview' | 'inventory' | 'missions' | 'events'>('overview');
+  const [activeTab, setActiveTab] = useState<'overview' | 'inventory' | 'missions' | 'events' | 'story'>('story');
+  const [storyText, setStoryText] = useState<string>('');
+  const [options, setOptions] = useState<Option[]>([]);
+  const [lastMessageId, setLastMessageId] = useState<number | null>(null);
+
+  // 加载最新消息内容
+  const loadStory = useCallback(() => {
+    const result = loadFromLatestMessage();
+    setStoryText(result.maintext);
+    setOptions(result.options);
+    if (result.messageId !== undefined) {
+      setLastMessageId(result.messageId);
+    }
+  }, []);
+
+  // 初始加载
+  useEffect(() => {
+    loadStory();
+  }, [loadStory]);
+
+  // 监听消息更新
+  useEffect(() => {
+    const checkForUpdates = () => {
+      const result = loadFromLatestMessage();
+      if (result.messageId !== undefined && result.messageId !== lastMessageId) {
+        setStoryText(result.maintext);
+        setOptions(result.options);
+        setLastMessageId(result.messageId);
+      }
+    };
+
+    // 每秒检查一次更新
+    const interval = setInterval(checkForUpdates, 1000);
+    return () => clearInterval(interval);
+  }, [lastMessageId]);
 
   // 获取游戏状态
   const gameState = {
@@ -96,7 +131,7 @@ export default function App() {
 
       {/* 标签页导航 */}
       <div className="flex gap-2 mb-4">
-        {(['overview', 'inventory', 'missions', 'events'] as const).map((tab) => (
+        {(['story', 'overview', 'inventory', 'missions', 'events'] as const).map((tab) => (
           <button
             key={tab}
             onClick={() => setActiveTab(tab)}
@@ -106,6 +141,7 @@ export default function App() {
                 : 'bg-slate-700 text-slate-300 hover:bg-slate-600'
             }`}
           >
+            {tab === 'story' && '📖 正文'}
             {tab === 'overview' && '📊 总览'}
             {tab === 'inventory' && '🎒 背包'}
             {tab === 'missions' && '📜 任务'}
@@ -116,6 +152,54 @@ export default function App() {
 
       {/* 标签页内容 */}
       <div className="bg-slate-800/80 rounded-lg border border-slate-600 p-4 min-h-[300px]">
+        {activeTab === 'story' && (
+          <div className="space-y-4">
+            <div className="flex justify-between items-center mb-3">
+              <h3 className="text-sm font-bold text-amber-400">剧情正文</h3>
+              <button
+                onClick={loadStory}
+                className="text-xs px-2 py-1 bg-slate-700 hover:bg-slate-600 rounded transition-colors"
+              >
+                🔄 刷新
+              </button>
+            </div>
+            {storyText ? (
+              <>
+                <div className="prose prose-invert prose-sm max-w-none">
+                  <div className="text-slate-200 leading-relaxed whitespace-pre-wrap">
+                    {storyText}
+                  </div>
+                </div>
+                {options.length > 0 && (
+                  <div className="mt-4 pt-4 border-t border-slate-600">
+                    <h4 className="text-xs font-bold text-amber-400 mb-2">选项</h4>
+                    <div className="space-y-2">
+                      {options.map((opt, index) => (
+                        <button
+                          key={opt.id}
+                          onClick={() => {
+                            console.log('选择选项:', opt.id, opt.text);
+                          }}
+                          className="w-full text-left p-3 bg-slate-700/50 hover:bg-slate-700 rounded-lg transition-colors"
+                        >
+                          <span className="inline-block w-6 h-6 text-center bg-amber-600/30 text-amber-400 rounded mr-2 font-bold">
+                            {opt.id}
+                          </span>
+                          <span className="text-sm text-slate-200">{opt.text}</span>
+                        </button>
+                      ))}
+                    </div>
+                  </div>
+                )}
+              </>
+            ) : (
+              <div className="text-center text-slate-500 py-8">
+                暂无剧情内容
+              </div>
+            )}
+          </div>
+        )}
+
         {activeTab === 'overview' && (
           <div className="space-y-4">
             {/* 核心指标 */}
