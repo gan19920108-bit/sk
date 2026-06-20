@@ -220,7 +220,7 @@
       内容: |-
         <body>
         <script>
-        $('body').load('https://throbbing-bar-3bfc.gan19920108.workers.dev/dist/sk/界面/状态栏/index.html')
+        $('body').load('https://cdn.jsdelivr.net/gh/gan19920108-bit/sk@master/dist/sk/界面/状态栏/index.html')
         </script>
         </body>
       来源:
@@ -244,11 +244,11 @@
         启用: true
         类型: 脚本
         内容: |-
-          import 'https://throbbing-bar-3bfc.gan19920108.workers.dev/dist/sk/脚本/变量结构/index.js';
+          import 'https://cdn.jsdelivr.net/gh/gan19920108-bit/sk@master/dist/sk/脚本/变量结构/index.js';
 
       - 名称: 立即事件
         id: 0f03773b-812a-4a78-85d1-d7d7fbe70240
         启用: true
         类型: 脚本
         内容: |-
-          import 'https://throbbing-bar-3bfc.gan19920108.workers.dev/dist/sk/脚本/立即事件/index.js';
+          import 'https://cdn.jsdelivr.net/gh/gan19920108-bit/sk@master/dist/sk/脚本/立即事件/index.js';
